@@ -75,16 +75,16 @@ make clean
 make
 make install
 
-cd ../ffmpeg-2.5.3
-./configure
-make clean
-make 
-make install
-
 cd ../yasm-1.3.0
 ./configure
 make clean
 make
+make install
+
+cd ../ffmpeg-2.5.3
+./configure
+make clean
+make 
 make install
 
 cd ../../php-5.5.27/ext/gd
