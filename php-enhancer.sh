@@ -11,6 +11,8 @@ tar -xzf libmcrypt-2.5.8.tar.gz
 tar -xzf libpng-1.6.16.tar.gz
 tar -xzf php-5.5.27.tar.gz
 tar -xzf icu4c-4-8-1.tgz 
+tar -xzf yasm-1.3.0.tar.gz
+tar -xzf ffmpeg-2.5.3.tar.gz
 
 cd openssl-0.9.8zg
 ./Configure --openssldir=/usr/local/ssl darwin64-x86_64-cc no-ssl2 no-ssl3 enable-sha
@@ -73,6 +75,18 @@ make clean
 make
 make install
 
+cd ../ffmpeg-2.5.3
+./configure
+make clean
+make 
+make install
+
+cd ../yasm-1.3.0
+./configure
+make clean
+make
+make install
+
 cd ../../php-5.5.27/ext/gd
 phpize
 ./configure --with-jpeg-dir=/usr/local --with-freetype-dir=/usr/local --with-png-dir=/usr/local
@@ -101,11 +115,9 @@ make clean
 make
 make install
 
-
-" > /etc/php.ini
-extension=gd.so >> /etc/php.ini
-extension=mcrypt.so >> /etc/php.ini
-extension=pcntl.so >> /etc/php.ini
-extension=intl.so >> /etc/php.ini
-" >> /etc/php.ini
-
+echo "" > /Library/Server/Web/Config/php/extensions.ini
+echo "extension=gd.so" >> /Library/Server/Web/Config/php/extensions.ini
+echo "extension=mcrypt.so" >> /Library/Server/Web/Config/php/extensions.ini
+echo "extension=pcntl.so" >> /Library/Server/Web/Config/php/extensions.ini
+echo "extension=intl.so" >> /Library/Server/Web/Config/php/extensions.ini
+echo "" >> /Library/Server/Web/Config/php/extensions.ini
