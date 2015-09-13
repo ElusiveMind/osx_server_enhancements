@@ -75,7 +75,7 @@ make clean
 make
 make install
 
-cd ../yasm-1.3.0
+cd ../../yasm-1.3.0
 ./configure
 make clean
 make
