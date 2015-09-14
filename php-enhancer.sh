@@ -87,7 +87,7 @@ make clean
 make 
 make install
 
-cd ../../php-5.5.27/ext/gd
+cd ../php-5.5.27/ext/gd
 phpize
 ./configure --with-jpeg-dir=/usr/local --with-freetype-dir=/usr/local --with-png-dir=/usr/local
 make clean
