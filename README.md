@@ -1,5 +1,5 @@
 # OS X Web Server/PHP enhancement
-# PHP 5.5.27 (OS X 10.11.0 - El Capitain)
+# PHP 5.5.29 (OS X 10.11.1- El Capitain)
 
 Note: LibPNG has had PNG support re-added to it's general release, however with mcrypt still missing and a couple of other packages that I use, I am going to continue to support these enhancements until such time as they are included.  
 
@@ -23,7 +23,7 @@ Make mcrypt work with the installed PHP (VERY important and almost a deal breake
 
 To do all of this, we have to over-write the base install of PHP on OS X. I am starting from a base install of Mac OS 10.11.0 (El Captain) running OS X Server version 5. The provided version of PHP with this set up is 5.5.27.. Here are the software packages and versions I have downloaded to accomplish these tasks:
 
-php-5.5.27  
+php-5.5.29  
 libtool-2.4.6  
 icu4c-4-8-1  
 autoconf-2.69  
