@@ -21,7 +21,7 @@ Add the PHP multi-threaded pcntl extension to the command line for processing co
 
 Make mcrypt work with the installed PHP (VERY important and almost a deal breaker to running a secure web server on Mac OS X).  
 
-To do all of this, we have to over-write the base install of PHP on OS X. I am starting from a base install of Mac OS 10.11.0 (El Captain) running OS X Server version 5. The provided version of PHP with this set up is 5.5.27.. Here are the software packages and versions I have downloaded to accomplish these tasks:
+To do all of this, we have to over-write the base install of PHP on OS X. I am starting from a base install of Mac OS 10.11.1 (El Captain) running OS X Server version 5. The provided version of PHP with this set up is 5.5.29.. Here are the software packages and versions I have downloaded to accomplish these tasks:
 
 php-5.5.29  
 libtool-2.4.6  
@@ -40,7 +40,7 @@ You will need to be sure you have Apple's Command Line Tools installed. This doe
 
 UNFORTUNATELY, IT IS NOT POSSIBLE TO BUILD PHP AGAINST XCODE'S STAND ALONE COMMAND LINE TOOLS AS IT DOES NOT INCLUDE APACHE'S SHARED LIBRARIES. ONLY THE COMMAND LINE TOOLS DOES. If you have an Apple developer account, download the Command Line tools for XCode 7. If not, use the link below:
 
-https://www.dropbox.com/s/un058p5yvhl3ec1/Command_Line_Tools_OS_X_10.11_for_Xcode_7_GM_seed.dmg?dl=0
+https://www.dropbox.com/s/vm3jgmwjb25sdpe/Command_Line_Tools_OS_X_10.11_for_Xcode_7.1.dmg?dl=0
 
 This repository provides these packages and an installer. The goal is to update the GD extension inside of PHP to support jpeg, gif, and png images along with freetype as a shared object (extension) to PHP as opposed to being compiled. It is also to provide mcrypt which is not provided by default as well as the pcntl extension for multi-threading. Additional modules could be added to this if desired, but these three were the ones most mission critical to my rationale behind creating this repository.
 
