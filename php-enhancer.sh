@@ -12,7 +12,7 @@ tar -xzf libpng-1.6.16.tar.gz
 tar -xzf php-5.5.29.tar.gz
 tar -xzf icu4c-4-8-1.tgz 
 tar -xzf yasm-1.3.0.tar.gz
-tar -xzf ffmpeg-2.5.3.tar.gz
+tar -xzf ffmpeg-2.8.5.tar.gz
 
 cd openssl-0.9.8zg
 ./Configure --openssldir=/usr/local/ssl darwin64-x86_64-cc no-ssl2 no-ssl3 enable-sha
