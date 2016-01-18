@@ -81,7 +81,7 @@ make clean
 make
 make install
 
-cd ../ffmpeg-2.5.3
+cd ../ffmpeg-2.8.3
 ./configure
 make clean
 make 
