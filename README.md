@@ -1,5 +1,6 @@
 # OS X Web Server/PHP enhancement
-# PHP 5.5.29 (OS X 10.11.1- El Capitain)
+# PHP 5.5.31 (OS X 10.11.4 - El Capitain)
+######By Michael R. Bagnall (mrbagnall at icloud.com) - http://www.michaelbagnall.com
 
 Note: LibPNG has had PNG support re-added to it's general release, however with mcrypt still missing and a couple of other packages that I use, I am going to continue to support these enhancements until such time as they are included.  
 
@@ -23,7 +24,7 @@ Make mcrypt work with the installed PHP (VERY important and almost a deal breake
 
 To do all of this, we have to over-write the base install of PHP on OS X. I am starting from a base install of Mac OS 10.11.1 (El Captain) running OS X Server version 5. The provided version of PHP with this set up is 5.5.29.. Here are the software packages and versions I have downloaded to accomplish these tasks:
 
-php-5.5.29  
+php-5.5.31  
 libtool-2.4.6  
 icu4c-4-8-1  
 autoconf-2.69  
@@ -32,23 +33,21 @@ libgd-GD-2_0_33
 libmcrypt-2.5.8  
 libpng-1-6-16  
 freetype-2.5.5  
-ffmpeg-2.5.3  
+ffmpeg-2.8.5  
 yasm-1.3.0  
 openssl-0.9.8zg
   
 You will need to be sure you have Apple's Command Line Tools installed. This does come with the XCode app, but this package is not yet built against those, but rather the stand alone command line tools package available by either downloading from the Developers portal or by dropping to the command line and typing 'git' and hitting return (this will try to run git, triggering an install of the command line tools for OS X).
 
-UNFORTUNATELY, IT IS NOT POSSIBLE TO BUILD PHP AGAINST XCODE'S STAND ALONE COMMAND LINE TOOLS AS IT DOES NOT INCLUDE APACHE'S SHARED LIBRARIES. ONLY THE COMMAND LINE TOOLS DOES. If you have an Apple developer account, download the Command Line tools for XCode 7. If not, use the link below:
+UNFORTUNATELY, IT IS NOT POSSIBLE TO BUILD PHP AGAINST STAND-ALONE XCODE AS IT DOES NOT INCLUDE APACHE'S SHARED LIBRARIES. ONLY THE COMMAND LINE TOOLS DOES. To install the correct command-line tools, go to a terminal window and run:
 
-https://www.dropbox.com/s/vm3jgmwjb25sdpe/Command_Line_Tools_OS_X_10.11_for_Xcode_7.1.dmg?dl=0
-
-This repository provides these packages and an installer. The goal is to update the GD extension inside of PHP to support jpeg, gif, and png images along with freetype as a shared object (extension) to PHP as opposed to being compiled. It is also to provide mcrypt which is not provided by default as well as the pcntl extension for multi-threading. Additional modules could be added to this if desired, but these three were the ones most mission critical to my rationale behind creating this repository.
-
+xcode-select --install  
+  
 The internationalization library and extension icu4c / intl were also recently added to assist in Magento 2 development.
 
 In addition to compiling these resources, it will create a new php.ini file to load these extensions.
 
-These extensions were designed to be used in conjunction with OS X Server but that is not require. Notably absent from this is an installer for MySQL which can be obtained and installed from mysql.org directly and installed.
+These extensions were designed to be used in conjunction with OS X Server but that is not required. Notably absent from this is an installer for MySQL which can be obtained and installed from mysql.org directly and installed.
 
 For more information on this repository, please visit:
 
