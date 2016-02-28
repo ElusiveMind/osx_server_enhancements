@@ -1,5 +1,5 @@
 # OS X Web Server/PHP enhancement
-# PHP 5.5.31 (OS X 10.11.4 - El Capitain)
+### PHP 5.5.31 (OS X 10.11.4 - El Capitain)
 ######By Michael R. Bagnall (mrbagnall at icloud.com) - http://www.michaelbagnall.com
 
 Note: LibPNG has had PNG support re-added to it's general release, however with mcrypt still missing and a couple of other packages that I use, I am going to continue to support these enhancements until such time as they are included.  
