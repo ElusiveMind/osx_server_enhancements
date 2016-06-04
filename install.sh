@@ -2,12 +2,11 @@
 
 echo ""
 echo ""
-echo ""
-echo '  ___ _  _ ___   ___ _  _ _  _   _   _  _  ___ ___ ___ '
-echo ' | _ \ || | _ \ | __| \| | || | /_\ | \| |/ __| __| _ \'
-echo ' |  _/ __ |  _/ | _|| .` | __ |/ _ \| .` | (__| _||   /'
-echo ' |_| |_||_|_|   |___|_|\_|_||_/_/ \_\_|\_|\___|___|_|_\'
-echo " v1.0 - Michael Bagnall - @mbagnall17 / @flyingflip"
+echo '     ___ _  _ ___   ___ _  _ _  _   _   _  _  ___ ___ ___ '
+echo '    | _ \ || | _ \ | __| \| | || | /_\ | \| |/ __| __| _ \'
+echo '    |  _/ __ |  _/ | _|| .` | __ |/ _ \| .` | (__| _||   /'
+echo '    |_| |_||_|_|   |___|_|\_|_||_/_/ \_\_|\_|\___|___|_|_\'
+echo "      v1.0 - Michael Bagnall - @mbagnall17 / @flyingflip"
 echo " Designed to enhance the PHP version on default Mac OS X Server"
 echo ""
 echo ""
@@ -25,25 +24,41 @@ read version
 case $version in
 [1]*)
   php="php-5.5.27.tar.gz"
+  conf="./configure '--with-apxs2=/usr/sbin/apxs' '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--sysconfdir=/private/etc' '--enable-cli' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/Library/Server/Web/Config/php' '--with-libxml-dir=/usr' '--with-openssl=/usr/local/ssl' '--with-kerberos=/usr' '--with-zlib=/usr' '--enable-bcmath' '--with-bz2=/usr' '--enable-calendar' '--disable-cgi' '--with-curl=/usr' '--enable-dba' '--with-ndbm=/usr' '--enable-exif' '--enable-fpm' '--enable-ftp' '--with-icu-dir=/usr' '--with-ldap=/usr' '--with-ldap-sasl=/usr' '--with-libedit=/usr' '--enable-mbstring' '--enable-mbregex' '--with-mysql=mysqlnd' '--with-mysqli=mysqlnd' '--without-pear' '--with-pear=no' '--with-pdo-mysql=mysqlnd' '--with-mysql-sock=/tmp/mysql.sock' '--with-readline=/usr' '--enable-shmop' '--with-snmp=/usr' '--enable-soap' '--enable-sockets' '--enable-sysvmsg' '--enable-sysvsem' '--enable-sysvshm' '--with-tidy' '--enable-wddx' '--with-xmlrpc' '--with-iconv-dir=/usr' '--with-xsl=/usr' '--enable-zip'"
   ;;
 [2]*)
   php="php-5.5.29.tar.gz"
+  conf="./configure '--with-apxs2=/usr/sbin/apxs' '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--sysconfdir=/private/etc' '--enable-cli' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/Library/Server/Web/Config/php' '--with-libxml-dir=/usr' '--with-openssl=/usr/local/ssl' '--with-kerberos=/usr' '--with-zlib=/usr' '--enable-bcmath' '--with-bz2=/usr' '--enable-calendar' '--disable-cgi' '--with-curl=/usr' '--enable-dba' '--with-ndbm=/usr' '--enable-exif' '--enable-fpm' '--enable-ftp' '--with-icu-dir=/usr' '--with-ldap=/usr' '--with-ldap-sasl=/usr' '--with-libedit=/usr' '--enable-mbstring' '--enable-mbregex' '--with-mysql=mysqlnd' '--with-mysqli=mysqlnd' '--without-pear' '--with-pear=no' '--with-pdo-mysql=mysqlnd' '--with-mysql-sock=/tmp/mysql.sock' '--with-readline=/usr' '--enable-shmop' '--with-snmp=/usr' '--enable-soap' '--enable-sockets' '--enable-sysvmsg' '--enable-sysvsem' '--enable-sysvshm' '--with-tidy' '--enable-wddx' '--with-xmlrpc' '--with-iconv-dir=/usr' '--with-xsl=/usr' '--enable-zip'"
   ;;
 [3]*)
   php="php-5.5.30.tar.gz"
+  conf="./configure '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--sysconfdir=/private/etc' '--enable-cli' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/Library/Server/Web/Config/php' '--with-libxml-dir=/usr' '--with-openssl=/usr/local/ssl' '--with-kerberos=/usr' '--with-zlib=/usr' '--enable-bcmath' '--with-bz2=/usr' '--enable-calendar' '--disable-cgi' '--with-curl=/usr' '--enable-dba' '--with-ndbm=/usr' '--enable-exif' '--enable-fpm' '--enable-ftp' '--with-icu-dir=/usr' '--with-ldap=/usr' '--with-ldap-sasl=/usr' '--with-libedit=/usr' '--enable-mbstring' '--enable-mbregex' '--with-mysql=mysqlnd' '--with-mysqli=mysqlnd' '--without-pear' '--with-pear=no' '--with-pdo-mysql=mysqlnd' '--with-mysql-sock=/tmp/mysql.sock' '--with-readline=/usr' '--enable-shmop' '--with-snmp=/usr' '--enable-soap' '--enable-sockets' '--enable-sysvmsg' '--enable-sysvsem' '--enable-sysvshm' '--with-tidy' '--enable-wddx' '--with-xmlrpc' '--with-iconv-dir=/usr' '--with-xsl=/usr' '--enable-zip' --with-apxs2=/usr/sbin/apxs"
   ;;
 [4]*)
   php="php-5.5.31.tar.gz"
+  conf="./configure '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--sysconfdir=/private/etc' '--enable-cli' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/Library/Server/Web/Config/php' '--with-libxml-dir=/usr' '--with-openssl=/usr/local/ssl' '--with-kerberos=/usr' '--with-zlib=/usr' '--enable-bcmath' '--with-bz2=/usr' '--enable-calendar' '--disable-cgi' '--with-curl=/usr' '--enable-dba' '--with-ndbm=/usr' '--enable-exif' '--enable-fpm' '--enable-ftp' '--with-icu-dir=/usr' '--with-ldap=/usr' '--with-ldap-sasl=/usr' '--with-libedit=/usr' '--enable-mbstring' '--enable-mbregex' '--with-mysql=mysqlnd' '--with-mysqli=mysqlnd' '--without-pear' '--with-pear=no' '--with-pdo-mysql=mysqlnd' '--with-mysql-sock=/tmp/mysql.sock' '--with-readline=/usr' '--enable-shmop' '--with-snmp=/usr' '--enable-soap' '--enable-sockets' '--enable-sysvmsg' '--enable-sysvsem' '--enable-sysvshm' '--with-tidy' '--enable-wddx' '--with-xmlrpc' '--with-iconv-dir=/usr' '--with-xsl=/usr' '--enable-zip' --with-apxs2=/usr/sbin/apxs"
   ;;
 [5]*)
   php="php-5.5.34.tar.gz"
+  conf="./configure '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--sysconfdir=/private/etc' '--enable-cli' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/Library/Server/Web/Config/php' '--with-libxml-dir=/usr' '--with-openssl=/usr/local/ssl' '--with-kerberos=/usr' '--with-zlib=/usr' '--enable-bcmath' '--with-bz2=/usr' '--enable-calendar' '--disable-cgi' '--with-curl=/usr' '--enable-dba' '--with-ndbm=/usr' '--enable-exif' '--enable-fpm' '--enable-ftp' '--with-icu-dir=/usr' '--with-ldap=/usr' '--with-ldap-sasl=/usr' '--with-libedit=/usr' '--enable-mbstring' '--enable-mbregex' '--with-mysql=mysqlnd' '--with-mysqli=mysqlnd' '--without-pear' '--with-pear=no' '--with-pdo-mysql=mysqlnd' '--with-mysql-sock=/tmp/mysql.sock' '--with-readline=/usr' '--enable-shmop' '--with-snmp=/usr' '--enable-soap' '--enable-sockets' '--enable-sysvmsg' '--enable-sysvsem' '--enable-sysvshm' '--with-tidy' '--enable-wddx' '--with-xmlrpc' '--with-iconv-dir=/usr' '--with-xsl=/usr' '--enable-zip' --with-apxs2=/usr/sbin/apxs"
   ;;
 [6]*)
   php="php-7.0.7.tar.gz"
+  conf="./configure '--with-apxs2=/usr/sbin/apxs' '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--sysconfdir=/private/etc' '--enable-cli' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/Library/Server/Web/Config/php' '--with-libxml-dir=/usr' '--with-openssl=/usr/local/ssl' '--with-kerberos=/usr' '--with-zlib=/usr' '--enable-bcmath' '--with-bz2=/usr' '--enable-calendar' '--disable-cgi' '--with-curl=/usr' '--enable-dba' '--with-ndbm=/usr' '--enable-exif' '--enable-fpm' '--enable-ftp' '--with-icu-dir=/usr' '--with-ldap=/usr' '--with-ldap-sasl=/usr' '--with-libedit=/usr' '--enable-mbstring' '--enable-mbregex' '--with-mysqli=mysqlnd' '--without-pear' '--with-pear=no' '--with-pdo-mysql=mysqlnd' '--with-mysql-sock=/tmp/mysql.sock' '--with-readline=/usr' '--enable-shmop' '--with-snmp=/usr' '--enable-soap' '--enable-sockets' '--enable-sysvmsg' '--enable-sysvsem' '--enable-sysvshm' '--with-tidy' '--enable-wddx' '--with-xmlrpc' '--with-iconv-dir=/usr' '--with-xsl=/usr' '--enable-zip'"
   ;;
 *)
   exit 1;
 esac
+
+echo ""
+echo ""
+echo -n "Do you want to install FFMPEG? (y/N):"
+read ffmpeg
+
+echo ""
+echo ""
+echo -n "Do you want to install icu4c/yasm? (y/N):"
+read yasm
 
 cd packages
 tar -xzf openssl-0.9.8zg.tar.gz
@@ -54,20 +69,22 @@ tar -xzf jpegsrc.v6b.tar.gz
 tar -xzf libgd-GD_2_0_33.tar.gz
 tar -xzf libmcrypt-2.5.8.tar.gz
 tar -xzf libpng-1.6.16.tar.gz
+if [ $yasm == 'y' ]; then
 tar -xzf icu4c-4-8-1.tgz 
 tar -xzf yasm-1.3.0.tar.gz
+fi
+if [ $ffmpeg == 'y' ]; then
 tar -xzf ffmpeg-2.8.5.tar.gz
+fi
 tar -xvzf $php
-
-
 
 cd openssl-0.9.8zg
 ./Configure --openssldir=/usr/local/ssl darwin64-x86_64-cc no-ssl2 no-ssl3 enable-sha
 make
 make install
 
-cd ../php-5.5.31
-./configure '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--sysconfdir=/private/etc' '--enable-cli' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/Library/Server/Web/Config/php' '--with-libxml-dir=/usr' '--with-openssl=/usr/local/ssl' '--with-kerberos=/usr' '--with-zlib=/usr' '--enable-bcmath' '--with-bz2=/usr' '--enable-calendar' '--disable-cgi' '--with-curl=/usr' '--enable-dba' '--with-ndbm=/usr' '--enable-exif' '--enable-fpm' '--enable-ftp' '--with-icu-dir=/usr' '--with-ldap=/usr' '--with-ldap-sasl=/usr' '--with-libedit=/usr' '--enable-mbstring' '--enable-mbregex' '--with-mysql=mysqlnd' '--with-mysqli=mysqlnd' '--without-pear' '--with-pear=no' '--with-pdo-mysql=mysqlnd' '--with-mysql-sock=/tmp/mysql.sock' '--with-readline=/usr' '--enable-shmop' '--with-snmp=/usr' '--enable-soap' '--enable-sockets' '--enable-sysvmsg' '--enable-sysvsem' '--enable-sysvshm' '--with-tidy' '--enable-wddx' '--with-xmlrpc' '--with-iconv-dir=/usr' '--with-xsl=/usr' '--enable-zip' --with-apxs2=/usr/sbin/apxs 
+cd ../$php
+configure = $($conf)
 make clean
 make
 make install
@@ -84,13 +101,16 @@ make clean
 make
 make install
 
+if [ $yasm == 'y' ]; then
 cd ../icu4c-4-8-1/source
 ./configure
 make clean
 make
 make install
+cd ../
+fi
 
-cd ../../freetype-2.5.5
+cd ../freetype-2.5.5
 ./configure --enable-shared
 make clean
 make
@@ -122,17 +142,21 @@ make clean
 make
 make install
 
+if [ $yasm == 'y' ]; then
 cd ../../yasm-1.3.0
 ./configure
 make clean
 make
 make install
+fi
 
+if [ $ffmpeg == 'y' ]; then
 cd ../ffmpeg-2.8.3
 ./configure
 make clean
 make 
 make install
+fi
 
 cd ../$php/ext/gd
 phpize
@@ -148,6 +172,7 @@ make clean
 make
 make install
 
+if [ $yasm == 'y' ]; then
 cd ../pcntl
 phpize
 ./configure
@@ -161,11 +186,14 @@ phpize
 make clean
 make
 make install
+fi
 
 echo "" > /Library/Server/Web/Config/php/extensions.ini
 echo "extension=gd.so" >> /Library/Server/Web/Config/php/extensions.ini
 echo "extension=mcrypt.so" >> /Library/Server/Web/Config/php/extensions.ini
+if [ $yasm == 'y' ]; then
 echo "extension=pcntl.so" >> /Library/Server/Web/Config/php/extensions.ini
 echo "extension=intl.so" >> /Library/Server/Web/Config/php/extensions.ini
+fi
 echo "" >> /Library/Server/Web/Config/php/extensions.ini
 
