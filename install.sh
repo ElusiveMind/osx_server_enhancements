@@ -1,5 +1,50 @@
 #!/bin/bash
 
+echo ""
+echo ""
+echo ""
+echo '  ___ _  _ ___   ___ _  _ _  _   _   _  _  ___ ___ ___ '
+echo ' | _ \ || | _ \ | __| \| | || | /_\ | \| |/ __| __| _ \'
+echo ' |  _/ __ |  _/ | _|| .` | __ |/ _ \| .` | (__| _||   /'
+echo ' |_| |_||_|_|   |___|_|\_|_||_/_/ \_\_|\_|\___|___|_|_\'
+echo " v1.0 - Michael Bagnall - @mbagnall17 / @flyingflip"
+echo " Designed to enhance the PHP version on default Mac OS X Server"
+echo ""
+echo ""
+echo "Which version of PHP do you wish to install?"
+echo "--------------------------------------------"
+echo " 1. PHP 5.5.27 - Yoesmite 10.5.5 / El Capitain 10.11.0"
+echo " 2. PHP 5.5.29 - Yoesmite 10.5.5 / El Capitain 10.11.1"
+echo " 3. PHP 5.5.30 - El Capitain 10.11.2"
+echo " 4. PHP 5.5.31 - El Capitain 10.11.4"
+echo " 5. PHP 5.5.34 - El Capitain 10.10.5"
+echo " 6. PHP 7.0.7 - experimental"
+echo " 7. Exit"
+read version
+
+case $version in
+[1]*)
+  php="php-5.5.27.tar.gz"
+  ;;
+[2]*)
+  php="php-5.5.29.tar.gz"
+  ;;
+[3]*)
+  php="php-5.5.30.tar.gz"
+  ;;
+[4]*)
+  php="php-5.5.31.tar.gz"
+  ;;
+[5]*)
+  php="php-5.5.34.tar.gz"
+  ;;
+[6]*)
+  php="php-7.0.7.tar.gz"
+  ;;
+*)
+  exit 1;
+esac
+
 cd packages
 tar -xzf openssl-0.9.8zg.tar.gz
 tar -xzf autoconf-2.69.tar.gz
@@ -9,10 +54,12 @@ tar -xzf jpegsrc.v6b.tar.gz
 tar -xzf libgd-GD_2_0_33.tar.gz
 tar -xzf libmcrypt-2.5.8.tar.gz
 tar -xzf libpng-1.6.16.tar.gz
-tar -xzf php-5.5.31.tar.gz
 tar -xzf icu4c-4-8-1.tgz 
 tar -xzf yasm-1.3.0.tar.gz
 tar -xzf ffmpeg-2.8.5.tar.gz
+tar -xvzf $php
+
+
 
 cd openssl-0.9.8zg
 ./Configure --openssldir=/usr/local/ssl darwin64-x86_64-cc no-ssl2 no-ssl3 enable-sha
@@ -87,7 +134,7 @@ make clean
 make 
 make install
 
-cd ../php-5.5.31/ext/gd
+cd ../$php/ext/gd
 phpize
 ./configure --with-jpeg-dir=/usr/local --with-freetype-dir=/usr/local --with-png-dir=/usr/local
 make clean
@@ -121,3 +168,4 @@ echo "extension=mcrypt.so" >> /Library/Server/Web/Config/php/extensions.ini
 echo "extension=pcntl.so" >> /Library/Server/Web/Config/php/extensions.ini
 echo "extension=intl.so" >> /Library/Server/Web/Config/php/extensions.ini
 echo "" >> /Library/Server/Web/Config/php/extensions.ini
+
