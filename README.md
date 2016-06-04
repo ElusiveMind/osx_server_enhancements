@@ -15,28 +15,28 @@ You can install any of the stock PHP versions that come with the various version
 
 Here are the versions of PHP available:
 
-PHP 5.5.27 - Yoesmite 10.5.5 / El Capitain 10.11.0
-PHP 5.5.29 - Yoesmite 10.5.5 / El Capitain 10.11.1
-PHP 5.5.30 - El Capitain 10.11.2
-PHP 5.5.31 - El Capitain 10.11.4
-PHP 5.5.34 - El Capitain 10.10.5
-PHP 7.0.7 - experimental
-
+PHP 5.5.27 - Yoesmite 10.5.5 / El Capitain 10.11.0  
+PHP 5.5.29 - Yoesmite 10.5.5 / El Capitain 10.11.1  
+PHP 5.5.30 - El Capitain 10.11.2  
+PHP 5.5.31 - El Capitain 10.11.4  
+PHP 5.5.34 - El Capitain 10.10.5  
+PHP 7.0.7 - experimental  
+  
 You can also install the following optional packages:
 
-ffmpeg-2.8.5
-icu4c-4-8-1 (includes yasm-1-3-0.tgz) 
+ffmpeg-2.8.5  
+icu4c-4-8-1 (includes yasm-1-3-0.tgz)   
 
 Other items installed that are not optional and are critical:
 
-openssl
-autoconf
-libtool
-freetype
-jpegsrc
-libgd
-libmcrypt
-libpng 
+openssl  
+autoconf  
+libtool  
+freetype  
+jpegsrc  
+libgd  
+libmcrypt  
+libpng   
 
 And the PHP extensions that utilize these libraries.
 
