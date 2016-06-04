@@ -1,42 +1,45 @@
 # OS X Web Server/PHP enhancement
-### PHP 5.5.31 (OS X 10.11.4 - El Capitain)
-######By Michael R. Bagnall (mrbagnall at icloud.com) - http://www.michaelbagnall.com
+######By Michael R. Bagnall @mrbagnall17 - @flyingflip
 
 Note: LibPNG has had PNG support re-added to it's general release, however with mcrypt still missing and a couple of other packages that I use, I am going to continue to support these enhancements until such time as they are included.  
 
-Also of note is that to install this you will need to disable System Integrity Protection in El Capitain. This is a new feature that prevents the modification of system paths. To do this, boot to your restore image and go to the Utilities menu. Select the terminal option and on the command line type:
+Also of note is that to install this you will need to disable System Integrity Protection in El Capitain. Note that this does not apply if you are using OS X Yoesmite. This is a new feature that prevents the modification of system paths. To do this, boot to your restore image and go to the Utilities menu. Select the terminal option and on the command line type:
 
 csrutil disable
 
 Then you will need to re-start and you should be able to install without further issue.
 
-There are a lot of opinions with regard to how to get various types of open source web server and applications programming software working with OS X. A lot of these involve installing a package management service such as Homebrew or MacPorts. While this may be the way some folks wish to go, my preference is go a more holistic route that involves fewer dependencies.
+I have completely re-designed the install process to give you options on the PHP versions you wish to install so that everything is in a single master branch.
 
-This involves installing things that need to be installed an nothing more. As such, I’ve learned to extend things on the base version of PHP that come with Mac OS X Server (El Capitain) without the need of package managing services.
+You can install any of the stock PHP versions that come with the various versions of OS X plus some optional packages. You can also install PHP 7. The exact version will be updated over time.
 
-Building additional components for your OS X web server can be pretty simple if you are comfortable around a command line and following a few instructions. This involves just a few more commands than it would take to run a package manager but gives you a lot more control while at the same time understanding a bit more about how your software works.
+Here are the versions of PHP available:
 
-In my example, I need to accomplish a few basic tasks:  
+PHP 5.5.27 - Yoesmite 10.5.5 / El Capitain 10.11.0
+PHP 5.5.29 - Yoesmite 10.5.5 / El Capitain 10.11.1
+PHP 5.5.30 - El Capitain 10.11.2
+PHP 5.5.31 - El Capitain 10.11.4
+PHP 5.5.34 - El Capitain 10.10.5
+PHP 7.0.7 - experimental
 
-Add the PHP multi-threaded pcntl extension to the command line for processing command line scripts properly programmed to use multi-threaded processes.  
+You can also install the following optional packages:
 
-Make mcrypt work with the installed PHP (VERY important and almost a deal breaker to running a secure web server on Mac OS X).  
+ffmpeg-2.8.5
+icu4c-4-8-1 (includes yasm-1-3-0.tgz) 
 
-To do all of this, we have to over-write the base install of PHP on OS X. I am starting from a base install of Mac OS 10.11.1 (El Captain) running OS X Server version 5. The provided version of PHP with this set up is 5.5.29.. Here are the software packages and versions I have downloaded to accomplish these tasks:
+Other items installed that are not optional and are critical:
 
-php-5.5.31  
-libtool-2.4.6  
-icu4c-4-8-1  
-autoconf-2.69  
-jpeg-6b  
-libgd-GD-2_0_33  
-libmcrypt-2.5.8  
-libpng-1-6-16  
-freetype-2.5.5  
-ffmpeg-2.8.5  
-yasm-1.3.0  
-openssl-0.9.8zg
-  
+openssl
+autoconf
+libtool
+freetype
+jpegsrc
+libgd
+libmcrypt
+libpng 
+
+And the PHP extensions that utilize these libraries.
+
 You will need to be sure you have Apple's Command Line Tools installed. This does come with the XCode app, but this package is not yet built against those, but rather the stand alone command line tools package available by either downloading from the Developers portal or by dropping to the command line and typing 'git' and hitting return (this will try to run git, triggering an install of the command line tools for OS X).
 
 UNFORTUNATELY, IT IS NOT POSSIBLE TO BUILD PHP AGAINST STAND-ALONE XCODE AS IT DOES NOT INCLUDE APACHE'S SHARED LIBRARIES. ONLY THE COMMAND LINE TOOLS DOES. To install the correct command-line tools, go to a terminal window and run:
@@ -49,6 +52,3 @@ In addition to compiling these resources, it will create a new php.ini file to l
 
 These extensions were designed to be used in conjunction with OS X Server but that is not required. Notably absent from this is an installer for MySQL which can be obtained and installed from mysql.org directly and installed.
 
-For more information on this repository, please visit:
-
-http://www.michaelbagnall.com/blogs/php-gd-fixing-your-php-server-mac-os-x-without-homebrewmacports
