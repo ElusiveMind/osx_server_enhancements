@@ -60,7 +60,7 @@ read -n 1 yasm
 echo ""
 echo ""
 
-echo “Decompressing packages needed for upgrade.”
+echo "Decompressing packages needed for upgrade."
 cd packages
 tar -xzf openssl-1.0.1t.tar.gz
 tar -xzf autoconf-2.69.tar.gz
