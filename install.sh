@@ -79,12 +79,12 @@ tar -xzf ffmpeg-2.8.5.tar.gz
 fi
 tar -xzf $php
 
-echo "Installing OpenSSL 1.0.1t (for PHP compilation purposes and not OS X system use)“
+echo "Installing OpenSSL 1.0.1t (for PHP compilation purposes and not OS X system use)"
 cd openssl-1.0.1t
-./Configure --openssldir=/usr/local/ssl darwin64-x86_64-cc no-ssl2 no-ssl3 enable-sha >> ../../logs/openssl-configure.txt 2>&1
-make clean >> ../../logs/openssl-make-clean.txt 2>&1
-make >> ../../logs/openssl-make.txt 2>&1
-make install >> ../../logs/openssl-install.txt 2>&1
+./Configure --openssldir=/usr/local/ssl darwin64-x86_64-cc no-ssl2 no-ssl3 enable-sha > ../../logs/openssl-configure.txt 2>&1
+make clean > ../../logs/openssl-make-clean.txt 2>&1
+make > ../../logs/openssl-make.txt 2>&1
+make install > ../../logs/openssl-install.txt 2>&1
 
 exit 1;
 
