@@ -53,15 +53,15 @@ esac
 echo ""
 echo ""
 echo -n "Do you want to install FFMPEG? (y/N):"
-read ffmpeg
+read -n 1 ffmpeg
 
 echo ""
 echo ""
 echo -n "Do you want to install icu4c/yasm? (y/N):"
-read yasm
+read -n 1 yasm
 
 cd packages
-tar -xzf openssl-0.9.8zg.tar.gz
+tar -xzf openssl-1.0.1t.tar.gz
 tar -xzf autoconf-2.69.tar.gz
 tar -xzf libtool-2.4.6.tar.gz
 tar -xzf freetype-2.5.5.tar.gz
@@ -76,9 +76,9 @@ fi
 if [ $ffmpeg == 'y' ]; then
 tar -xzf ffmpeg-2.8.5.tar.gz
 fi
-tar -xvzf $php
+tar -xzf $php
 
-cd openssl-0.9.8zg
+cd openssl-1.0.1t
 ./Configure --openssldir=/usr/local/ssl darwin64-x86_64-cc no-ssl2 no-ssl3 enable-sha
 make
 make install
