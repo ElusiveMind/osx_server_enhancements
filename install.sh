@@ -117,60 +117,68 @@ make install > ../../../logs/icu4c-make-install.txt 2>&1
 cd ../
 fi
 
+echo "Installing freetype 2.5.5"
 cd ../freetype-2.5.5
-./configure --enable-shared
-make clean
-make
-make install
+./configure --enable-shared > ../../logs/freetype-configure.txt 2>&1
+make clean > ../../logs/freetype-make-clean.txt 2>&1
+make > ../../logs/freetype-make.txt 2>&1
+make install > ../../logs/freetype-make-install.txt 2>&1 
 
+echo "Installing JPEG 6b"
 cd ../jpeg-6b
-./configure --enable-shared --enable-static
-ln -s /usr/local/bin/libtool libtool
-mkdir -p /usr/local/man/man1
-make clean
-make
-make install
+./configure --enable-shared --enable-static > ../../logs/jpeg-configure.txt 2>&1
+ln -s /usr/local/bin/libtool libtool 
+mkdir -p /usr/local/man/man1 
+make clean > ../../logs/jpeg-make-clean.txt 2>&1
+make > ../../logs/jpeg-make.txt 2>&1
+make install > ../../logs/jpeg-make-install.txt 2>&1
 
+echo "Installing libmcrypt 2.5.8"
 cd ../libmcrypt-2.5.8
-./configure --enable-shared
-make clean
-make
-make install
+./configure --enable-shared > ../../logs/mcrypt-configure.txt 2>&1
+make clean > ../../logs/mcrypt-make-clean.txt 2>&1
+make > ../../logs/mcrypt-make.txt 2>&1
+make install > ../../logs/mcrypt-make-install.txt 2>&1 
 
+echo "Installing libpng 1.6.16"
 cd ../libpng-1.6.16
-./configure --enable-shared
-make clean
-make
-make install
+./configure --enable-shared > ../../logs/libpng-configure.txt 2>&1
+make clean > ../../logs/libpng-make-clean.txt 2>&1
+make > ../../logs/libpng-make.txt 2>&1
+make install > ../../logs/libpng-make-install.txt 2>&1
 
+echo "Installing libgd 2.0.33"
 cd ../libgd-GD_2_0_33/src
-./configure --enable-shared
-make clean
-make
-make install
+./configure --enable-shared > ../../../logs/libgd-configure.txt 2>&1
+make clean > ../../../logs/libgd-make-clean.txt 2>&1
+make > ../../../logs/libgd-make.txt 2>&1
+make install > ../../../logs/libgd-make-install.txt 2>&1
 
 if [ $yasm == 'y' ]; then
+echo "Installing yasm 1.3.0"
 cd ../../yasm-1.3.0
 ./configure > ../../logs/yasm-configure.txt 2>&1
 make clean > ../../logs/yasm-make-clean.txt 2>&1
 make > ../../logs/yasm-make.txt 2>&1
 make install > ../../logs/yasm-make-install.txt 2>&1
 fi
-
+ 
 if [ $ffmpeg == 'y' ]; then
+echo "Installing ffmpeg 2.8.3"
 cd ../ffmpeg-2.8.3
-./configure
-make clean
-make 
-make install
+./configure > ../../logs/ffmpeg-configure.txt 2>&1
+make clean > ../../logs/ffmpeg-make-clean.txt 2>&1
+make > ../../logs/ffmpeg-make.txt 2>&1
+make install > ../../logs/ffmpeg-make-install.txt 2>&1
 fi
 
+echo "Installing PHP Extensions"
 cd ../$php/ext/gd
-phpize
-./configure --with-jpeg-dir=/usr/local --with-freetype-dir=/usr/local --with-png-dir=/usr/local
-make clean
-make
-make install
+phpize > ../../../../logs/php-gd-phpize.txt 2>&1
+./configure --with-jpeg-dir=/usr/local --with-freetype-dir=/usr/local --with-png-dir=/usr/local > ../../../../logs/php-gd-configure.txt 2>&1
+make clean > ../../../../logs/php-gd-make-clean.txt 2>&1
+make > ../../../../logs/php-gd-make.txt 2>&1
+make install > ../../../../logs/php-gd-make-install.txt 2>&1
 
 cd ../mcrypt
 phpize
@@ -195,6 +203,7 @@ make
 make install
 fi
 
+echo "Configuring web server exitensions."
 echo "" > /Library/Server/Web/Config/php/extensions.ini
 echo "extension=gd.so" >> /Library/Server/Web/Config/php/extensions.ini
 echo "extension=mcrypt.so" >> /Library/Server/Web/Config/php/extensions.ini
@@ -204,3 +213,6 @@ echo "extension=intl.so" >> /Library/Server/Web/Config/php/extensions.ini
 fi
 echo "" >> /Library/Server/Web/Config/php/extensions.ini
 
+echo "Complete."
+echo ""
+echo ""
