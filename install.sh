@@ -54,6 +54,7 @@ echo ""
 echo ""
 echo -n "Do you want to install FFMPEG? (y/N):"
 read -n 1 ffmpeg
+echo ""
 echo -n "Do you want to install icu4c/yasm? (y/N):"
 read -n 1 yasm
 echo ""
@@ -79,10 +80,10 @@ tar -xzf $php
 
 echo "Installing OpenSSL 1.0.1t"
 cd openssl-1.0.1t
-./Configure --openssldir=/usr/local/ssl darwin64-x86_64-cc no-ssl2 no-ssl3 enable-sha > ./logs/openssl-configure.txt
-make clean > ./logs/openssl-make-clean.txt
-make > ./logs/openssl-make.txt
-make install > ./logs/openssl_install
+./Configure --openssldir=/usr/local/ssl darwin64-x86_64-cc no-ssl2 no-ssl3 enable-sha >> ./logs/openssl-configure.txt
+make clean >> ./logs/openssl-make-clean.txt
+make >> ./logs/openssl-make.txt
+make install >> ./logs/openssl_install
 
 exit 1;
 
