@@ -60,6 +60,7 @@ read -n 1 yasm
 echo ""
 echo ""
 
+echo “Decompressing packages needed for upgrade.”
 cd packages
 tar -xzf openssl-1.0.1t.tar.gz
 tar -xzf autoconf-2.69.tar.gz
@@ -78,12 +79,12 @@ tar -xzf ffmpeg-2.8.5.tar.gz
 fi
 tar -xzf $php
 
-echo "Installing OpenSSL 1.0.1t"
+echo "Installing OpenSSL 1.0.1t (for PHP compilation purposes and not OS X system use)“
 cd openssl-1.0.1t
-./Configure --openssldir=/usr/local/ssl darwin64-x86_64-cc no-ssl2 no-ssl3 enable-sha >> ./logs/openssl-configure.txt
-make clean >> ./logs/openssl-make-clean.txt
-make >> ./logs/openssl-make.txt
-make install >> ./logs/openssl_install
+./Configure --openssldir=/usr/local/ssl darwin64-x86_64-cc no-ssl2 no-ssl3 enable-sha >> ../../logs/openssl-configure.txt 2>&1
+make clean >> ../../logs/openssl-make-clean.txt 2>&1
+make >> ../../logs/openssl-make.txt 2>&1
+make install >> ../../logs/openssl-install.txt 2>&1
 
 exit 1;
 
