@@ -54,3 +54,10 @@ In addition to compiling these resources, it will create a new php.ini file to l
 
 These extensions were designed to be used in conjunction with OS X Server but that is not required. Notably absent from this is an installer for MySQL which can be obtained and installed from mysql.org directly and installed.
 
+PHP 7 Information:  
+------------------  
+If you opt to install PHP 7, you will need to manually tell Apache to look for the libphp7.so file in /usr/libexec/apache
+
+The relevant changes need to occur in /Library/Server/Web/Config/apache2/httpd_server_app.conf around lines 128 and again on line 600
+
+This will be automated in the future with more testing.
