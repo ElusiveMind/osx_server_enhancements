@@ -9,6 +9,9 @@ echo '    |_| |_||_|_|   |___|_|\_|_||_/_/ \_\_|\_|\___|___|_|_\'
 echo "      v1.0 - Michael Bagnall - @mbagnall17 / @flyingflip"
 echo " Designed to enhance the PHP version on default Mac OS X Server"
 echo ""
+echo "Please be sure you have installed OS X Server from Apple before"
+echo "running this installer as there are dependent components in there"
+echo "for successful execution."
 echo ""
 echo "Which version of PHP do you wish to install?"
 echo "--------------------------------------------"
@@ -25,22 +28,22 @@ case $version in
 [1]*)
   php="php-5.5.27.tar.gz"
   php_dir="php-5.5.27"
-  conf="./configure '--with-apxs2=/usr/sbin/apxs' '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--sysconfdir=/private/etc' '--enable-cli' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/Library/Server/Web/Config/php' '--with-libxml-dir=/usr' '--with-openssl=/usr/local/ssl' '--with-kerberos=/usr' '--with-zlib=/usr' '--enable-bcmath' '--with-bz2=/usr' '--enable-calendar' '--disable-cgi' '--with-curl=/usr' '--enable-dba' '--with-ndbm=/usr' '--enable-exif' '--enable-fpm' '--enable-ftp' '--with-icu-dir=/usr' '--with-ldap=/usr' '--with-ldap-sasl=/usr' '--with-libedit=/usr' '--enable-mbstring' '--enable-mbregex' '--with-mysql=mysqlnd' '--with-mysqli=mysqlnd' '--without-pear' '--with-pear=no' '--with-pdo-mysql=mysqlnd' '--with-mysql-sock=/tmp/mysql.sock' '--with-readline=/usr' '--enable-shmop' '--with-snmp=/usr' '--enable-soap' '--enable-sockets' '--enable-sysvmsg' '--enable-sysvsem' '--enable-sysvshm' '--with-tidy' '--enable-wddx' '--with-xmlrpc' '--with-iconv-dir=/usr' '--with-xsl=/usr' '--enable-zip' > ../../logs/php-configure.txt 2>&1"
+  conf="./configure --with-apxs2=/usr/sbin/apxs --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --sysconfdir=/private/etc --enable-cli --with-config-file-path=/etc --with-config-file-scan-dir=/Library/Server/Web/Config/php --with-libxml-dir=/usr --with-openssl=/usr/local/ssl --with-kerberos=/usr --with-zlib=/usr --enable-bcmath --with-bz2=/usr --enable-calendar --disable-cgi --with-curl=/usr --enable-dba --with-ndbm=/usr --enable-exif --enable-fpm --enable-ftp --with-icu-dir=/usr --with-ldap=/usr --with-ldap-sasl=/usr --with-libedit=/usr --enable-mbstring --enable-mbregex --with-mysql=mysqlnd --with-mysqli=mysqlnd --without-pear --with-pear=no --with-pdo-mysql=mysqlnd --with-mysql-sock=/tmp/mysql.sock --with-readline=/usr --enable-shmop --with-snmp=/usr --enable-soap --enable-sockets --enable-sysvmsg --enable-sysvsem --enable-sysvshm --with-tidy --enable-wddx --with-xmlrpc --with-iconv-dir=/usr --with-xsl=/usr --enable-zip"
   ;;
 [2]*)
   php="php-5.5.29.tar.gz"
   php_dir="php-5.5.29"
-  conf="./configure '--with-apxs2=/usr/sbin/apxs' '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--sysconfdir=/private/etc' '--enable-cli' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/Library/Server/Web/Config/php' '--with-libxml-dir=/usr' '--with-openssl=/usr/local/ssl' '--with-kerberos=/usr' '--with-zlib=/usr' '--enable-bcmath' '--with-bz2=/usr' '--enable-calendar' '--disable-cgi' '--with-curl=/usr' '--enable-dba' '--with-ndbm=/usr' '--enable-exif' '--enable-fpm' '--enable-ftp' '--with-icu-dir=/usr' '--with-ldap=/usr' '--with-ldap-sasl=/usr' '--with-libedit=/usr' '--enable-mbstring' '--enable-mbregex' '--with-mysql=mysqlnd' '--with-mysqli=mysqlnd' '--without-pear' '--with-pear=no' '--with-pdo-mysql=mysqlnd' '--with-mysql-sock=/tmp/mysql.sock' '--with-readline=/usr' '--enable-shmop' '--with-snmp=/usr' '--enable-soap' '--enable-sockets' '--enable-sysvmsg' '--enable-sysvsem' '--enable-sysvshm' '--with-tidy' '--enable-wddx' '--with-xmlrpc' '--with-iconv-dir=/usr' '--with-xsl=/usr' '--enable-zip' > ../../logs/php-configure.txt 2>&1"
+  conf="./configure --with-apxs2=/usr/sbin/apxs --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --sysconfdir=/private/etc --enable-cli --with-config-file-path=/etc --with-config-file-scan-dir=/Library/Server/Web/Config/php --with-libxml-dir=/usr --with-openssl=/usr/local/ssl --with-kerberos=/usr --with-zlib=/usr --enable-bcmath --with-bz2=/usr --enable-calendar --disable-cgi --with-curl=/usr --enable-dba --with-ndbm=/usr --enable-exif --enable-fpm --enable-ftp --with-icu-dir=/usr --with-ldap=/usr --with-ldap-sasl=/usr --with-libedit=/usr --enable-mbstring --enable-mbregex --with-mysql=mysqlnd --with-mysqli=mysqlnd --without-pear --with-pear=no --with-pdo-mysql=mysqlnd --with-mysql-sock=/tmp/mysql.sock --with-readline=/usr --enable-shmop --with-snmp=/usr --enable-soap --enable-sockets --enable-sysvmsg --enable-sysvsem --enable-sysvshm --with-tidy --enable-wddx --with-xmlrpc --with-iconv-dir=/usr --with-xsl=/usr --enable-zip"
   ;;
 [3]*)
   php="php-5.5.30.tar.gz"
   php_dir="php-5.5.30"
-  conf="./configure '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--sysconfdir=/private/etc' '--enable-cli' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/Library/Server/Web/Config/php' '--with-libxml-dir=/usr' '--with-openssl=/usr/local/ssl' '--with-kerberos=/usr' '--with-zlib=/usr' '--enable-bcmath' '--with-bz2=/usr' '--enable-calendar' '--disable-cgi' '--with-curl=/usr' '--enable-dba' '--with-ndbm=/usr' '--enable-exif' '--enable-fpm' '--enable-ftp' '--with-icu-dir=/usr' '--with-ldap=/usr' '--with-ldap-sasl=/usr' '--with-libedit=/usr' '--enable-mbstring' '--enable-mbregex' '--with-mysql=mysqlnd' '--with-mysqli=mysqlnd' '--without-pear' '--with-pear=no' '--with-pdo-mysql=mysqlnd' '--with-mysql-sock=/tmp/mysql.sock' '--with-readline=/usr' '--enable-shmop' '--with-snmp=/usr' '--enable-soap' '--enable-sockets' '--enable-sysvmsg' '--enable-sysvsem' '--enable-sysvshm' '--with-tidy' '--enable-wddx' '--with-xmlrpc' '--with-iconv-dir=/usr' '--with-xsl=/usr' '--enable-zip' --with-apxs2=/usr/sbin/apxs > ../../logs/php-configure.txt 2>&1"
+  conf="./configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --sysconfdir=/private/etc --enable-cli --with-config-file-path=/etc --with-config-file-scan-dir=/Library/Server/Web/Config/php --with-libxml-dir=/usr --with-openssl=/usr/local/ssl --with-kerberos=/usr --with-zlib=/usr --enable-bcmath --with-bz2=/usr --enable-calendar --disable-cgi --with-curl=/usr --enable-dba --with-ndbm=/usr --enable-exif --enable-fpm --enable-ftp --with-icu-dir=/usr --with-ldap=/usr --with-ldap-sasl=/usr --with-libedit=/usr --enable-mbstring --enable-mbregex --with-mysql=mysqlnd --with-mysqli=mysqlnd --without-pear --with-pear=no --with-pdo-mysql=mysqlnd --with-mysql-sock=/tmp/mysql.sock --with-readline=/usr --enable-shmop --with-snmp=/usr --enable-soap --enable-sockets --enable-sysvmsg --enable-sysvsem --enable-sysvshm --with-tidy --enable-wddx --with-xmlrpc --with-iconv-dir=/usr --with-xsl=/usr --enable-zip --with-apxs2=/usr/sbin/apxs"
   ;;
 [4]*)
   php="php-5.5.31.tar.gz"
   php_dir="php-5.5.31"
-  conf="./configure '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--sysconfdir=/private/etc' '--enable-cli' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/Library/Server/Web/Config/php' '--with-libxml-dir=/usr' '--with-openssl=/usr/local/ssl' '--with-kerberos=/usr' '--with-zlib=/usr' '--enable-bcmath' '--with-bz2=/usr' '--enable-calendar' '--disable-cgi' '--with-curl=/usr' '--enable-dba' '--with-ndbm=/usr' '--enable-exif' '--enable-fpm' '--enable-ftp' '--with-icu-dir=/usr' '--with-ldap=/usr' '--with-ldap-sasl=/usr' '--with-libedit=/usr' '--enable-mbstring' '--enable-mbregex' '--with-mysql=mysqlnd' '--with-mysqli=mysqlnd' '--without-pear' '--with-pear=no' '--with-pdo-mysql=mysqlnd' '--with-mysql-sock=/tmp/mysql.sock' '--with-readline=/usr' '--enable-shmop' '--with-snmp=/usr' '--enable-soap' '--enable-sockets' '--enable-sysvmsg' '--enable-sysvsem' '--enable-sysvshm' '--with-tidy' '--enable-wddx' '--with-xmlrpc' '--with-iconv-dir=/usr' '--with-xsl=/usr' '--enable-zip' --with-apxs2=/usr/sbin/apxs > ../../logs/php-configure.txt 2>&1"
+  conf="./configure --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --sysconfdir=/private/etc --enable-cli --with-config-file-path=/etc --with-config-file-scan-dir=/Library/Server/Web/Config/php --with-libxml-dir=/usr --with-openssl=/usr/local/ssl --with-kerberos=/usr --with-zlib=/usr --enable-bcmath --with-bz2=/usr --enable-calendar --disable-cgi --with-curl=/usr --enable-dba --with-ndbm=/usr --enable-exif --enable-fpm --enable-ftp --with-icu-dir=/usr --with-ldap=/usr --with-ldap-sasl=/usr --with-libedit=/usr --enable-mbstring --enable-mbregex --with-mysql=mysqlnd --with-mysqli=mysqlnd --without-pear --with-pear=no --with-pdo-mysql=mysqlnd --with-mysql-sock=/tmp/mysql.sock --with-readline=/usr --enable-shmop --with-snmp=/usr --enable-soap --enable-sockets --enable-sysvmsg --enable-sysvsem --enable-sysvshm --with-tidy --enable-wddx --with-xmlrpc --with-iconv-dir=/usr --with-xsl=/usr --enable-zip --with-apxs2=/usr/sbin/apxs"
   ;;
 [5]*)
   php="php-5.5.34.tar.gz"
@@ -50,7 +53,7 @@ case $version in
 [6]*)
   php="php-7.0.7.tar.gz"
   php_dir="php-7.0.7"
-  conf="./configure '--with-apxs2=/usr/sbin/apxs' '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--sysconfdir=/private/etc' '--enable-cli' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/Library/Server/Web/Config/php' '--with-libxml-dir=/usr' '--with-openssl=/usr/local/ssl' '--with-kerberos=/usr' '--with-zlib=/usr' '--enable-bcmath' '--with-bz2=/usr' '--enable-calendar' '--disable-cgi' '--with-curl=/usr' '--enable-dba' '--with-ndbm=/usr' '--enable-exif' '--enable-fpm' '--enable-ftp' '--with-icu-dir=/usr' '--with-ldap=/usr' '--with-ldap-sasl=/usr' '--with-libedit=/usr' '--enable-mbstring' '--enable-mbregex' '--with-mysqli=mysqlnd' '--without-pear' '--with-pear=no' '--with-pdo-mysql=mysqlnd' '--with-mysql-sock=/tmp/mysql.sock' '--with-readline=/usr' '--enable-shmop' '--with-snmp=/usr' '--enable-soap' '--enable-sockets' '--enable-sysvmsg' '--enable-sysvsem' '--enable-sysvshm' '--with-tidy' '--enable-wddx' '--with-xmlrpc' '--with-iconv-dir=/usr' '--with-xsl=/usr' '--enable-zip' > ../../logs/php-configure.txt 2>&1"
+  conf="./configure --with-apxs2=/usr/sbin/apxs --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --sysconfdir=/private/etc --enable-cli --with-config-file-path=/etc --with-config-file-scan-dir=/Library/Server/Web/Config/php --with-libxml-dir=/usr --with-openssl=/usr --with-kerberos=/usr --with-zlib=/usr --enable-bcmath --with-bz2=/usr --enable-calendar --disable-cgi --with-curl=/usr --enable-dba --with-ndbm=/usr --enable-exif --enable-fpm --enable-ftp --with-icu-dir=/usr --with-ldap=/usr --with-ldap-sasl=/usr --with-libedit=/usr --enable-mbstring --enable-mbregex --with-mysqli=mysqlnd --without-pear --with-pear=no --with-pdo-mysql=mysqlnd --with-mysql-sock=/tmp/mysql.sock --with-readline=/usr --enable-shmop --with-snmp=/usr --enable-soap --enable-sockets --enable-sysvmsg --enable-sysvsem --enable-sysvshm --with-tidy --enable-wddx --with-xmlrpc --with-iconv-dir=/usr --with-xsl=/usr --enable-zip"
   ;;
 *)
   exit 1;
@@ -65,7 +68,8 @@ echo ""
 
 echo "Decompressing packages needed for upgrade."
 cd packages
-tar -xzf openssl-1.0.1t.tar.gz
+#tar -xzf openssl-1.0.1t.tar.gz
+tar -xzf libressl-2.4.0.tar.gz
 tar -xzf autoconf-2.69.tar.gz
 tar -xzf libtool-2.4.6.tar.gz
 tar -xzf freetype-2.5.5.tar.gz
@@ -84,12 +88,19 @@ tar -xzf ffmpeg-2.8.5.tar.gz
 fi
 tar -xzf $php
 
-echo "Installing OpenSSL 1.0.1t (for PHP compilation purposes and not OS X system use)"
-cd openssl-1.0.1t
-./Configure --openssldir=/usr/local/ssl darwin64-x86_64-cc no-ssl2 no-ssl3 enable-sha > ../../logs/openssl-configure.txt 2>&1
-make clean > ../../logs/openssl-make-clean.txt 2>&1
-make > ../../logs/openssl-make.txt 2>&1
-make install > ../../logs/openssl-install.txt 2>&1
+echo "Installing LibreSSL 2.4.0"
+cd libressl-2.4.0
+./configure > ../../logs/libressl-configure.txt 2>&1
+make clean > ../../logs/libressl-make-clean.txt 2>&1
+make > ../../logs/libressl-make.txt 2>&1
+make install > ../../logs/libressl-install.txt 2>&1
+
+#echo "Installing OpenSSL 1.0.1t"
+#cd openssl-1.0.1t
+#./Configure --openssldir=/usr darwin64-x86_64-cc no-ssl2 no-ssl3 enable-tls1 enable-tls12 enable-sha shared > ../../logs/openssl-configure.txt 2>&1
+#make clean > ../../logs/openssl-make-clean.txt 2>&1
+#make > ../../logs/openssl-make.txt 2>&1
+#make install > ../../logs/openssl-install.txt 2>&1
 
 echo "Installing bison 2.7"
 cd ../bison-2.7

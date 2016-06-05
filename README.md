@@ -30,8 +30,8 @@ icu4c-4-8-1 (includes yasm-1-3-0.tgz)
 Other items installed that are not optional and are critical:
 
 openssl  
-bison
-re2c
+bisonv  
+re2c  
 autoconf  
 libtool  
 freetype  
