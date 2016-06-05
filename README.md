@@ -19,7 +19,7 @@ PHP 5.5.27 - Yoesmite 10.5.5 / El Capitain 10.11.0
 PHP 5.5.29 - Yoesmite 10.5.5 / El Capitain 10.11.1  
 PHP 5.5.30 - El Capitain 10.11.2  
 PHP 5.5.31 - El Capitain 10.11.4  
-PHP 5.5.34 - El Capitain 10.10.5  
+PHP 5.5.34 - El Capitain 10.11.5  
 PHP 7.0.7 - experimental  
   
 You can also install the following optional packages:
@@ -30,6 +30,8 @@ icu4c-4-8-1 (includes yasm-1-3-0.tgz)
 Other items installed that are not optional and are critical:
 
 openssl  
+bison
+re2c
 autoconf  
 libtool  
 freetype  
