@@ -29,7 +29,7 @@ icu4c-4-8-1 (includes yasm-1-3-0.tgz)
 
 Other items installed that are not optional and are critical:
 
-openssl  
+libressl 
 bisonv  
 re2c  
 autoconf  
@@ -41,6 +41,10 @@ libmcrypt
 libpng   
 
 And the PHP extensions that utilize these libraries.
+
+pcntl
+mcrypt
+gd
 
 You will need to be sure you have Apple's Command Line Tools installed. This does come with the XCode app, but this package is not yet built against those, but rather the stand alone command line tools package available by either downloading from the Developers portal or by dropping to the command line and typing 'git' and hitting return (this will try to run git, triggering an install of the command line tools for OS X).
 

@@ -220,7 +220,6 @@ make clean > ../../../../logs/php-mcrypt-make-clean.txt 2>&1
 make > ../../../../logs/php-mcrypt-make.txt 2>&1
 make install > ../../../../logs/php-mcrypt-make-install.txt 2>&1
 
-if [ $yasm == 'y' ]; then
 echo "pcntl"
 cd ../pcntl
 phpize > ../../../../logs/php-pcntl-phpize.txt 2>&1
@@ -229,6 +228,7 @@ make clean > ../../../../logs/php-pcntl-make-clean.txt 2>&1
 make > ../../../../logs/php-pcntl-make.txt 2>&1
 make install > ../../../../logs/php-pcntl-make-install.txt 2>&1
 
+if [ $yasm == 'y' ]; then
 echo "intl"
 cd ../intl
 phpize > ../../../../logs/php-intl-phpize.txt 2>&1
@@ -245,8 +245,8 @@ echo "Configuring web server exitensions."
 echo "" > /Library/Server/Web/Config/php/extensions.ini
 echo "extension=gd.so" >> /Library/Server/Web/Config/php/extensions.ini
 echo "extension=mcrypt.so" >> /Library/Server/Web/Config/php/extensions.ini
-if [ $yasm == 'y' ]; then
 echo "extension=pcntl.so" >> /Library/Server/Web/Config/php/extensions.ini
+if [ $yasm == 'y' ]; then
 echo "extension=intl.so" >> /Library/Server/Web/Config/php/extensions.ini
 fi
 echo "" >> /Library/Server/Web/Config/php/extensions.ini
