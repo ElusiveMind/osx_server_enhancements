@@ -1,5 +1,5 @@
 # OS X Web Server/PHP enhancement
-######By Michael R. Bagnall @mrbagnall17 - @flyingflip
+###### By Michael R. Bagnall @mbagnall17
 
 Note: LibPNG has had PNG support re-added to it's general release, however with mcrypt still missing and a couple of other packages that I use, I am going to continue to support these enhancements until such time as they are included.  
 
@@ -20,7 +20,7 @@ PHP 5.5.29 - Yoesmite 10.5.5 / El Capitain 10.11.1
 PHP 5.5.30 - El Capitain 10.11.2  
 PHP 5.5.31 - El Capitain 10.11.4  
 PHP 5.5.34 - El Capitain 10.11.5  
-PHP 7.0.7 - experimental  
+PHP 7.1.14 - Sierra 10.12.6
   
 You can also install the following optional packages:
 
@@ -60,7 +60,7 @@ These extensions were designed to be used in conjunction with OS X Server but th
 
 PHP 7 Information:  
 ------------------  
-If you opt to install PHP 7, you will need to manually tell Apache to look for the libphp7.so file in /usr/libexec/apache
+If you opt to install PHP 7 on Sierra, you will need to manually tell Apache to look for the libphp7.so file in /usr/libexec/apache
 
 The relevant changes need to occur in /Library/Server/Web/Config/apache2/httpd_server_app.conf around lines 128 and again on line 600
 
