@@ -6,7 +6,7 @@ echo '     ___ _  _ ___   ___ _  _ _  _   _   _  _  ___ ___ ___ '
 echo '    | _ \ || | _ \ | __| \| | || | /_\ | \| |/ __| __| _ \'
 echo '    |  _/ __ |  _/ | _|| .` | __ |/ _ \| .` | (__| _||   /'
 echo '    |_| |_||_|_|   |___|_|\_|_||_/_/ \_\_|\_|\___|___|_|_\'
-echo "      v1.0 - Michael Bagnall - @mbagnall17 / @flyingflip"
+echo "             v1.1 - Michael Bagnall - @mbagnall17"
 echo " Designed to enhance the PHP version on default Mac OS X Server"
 echo ""
 echo "Please be sure you have installed OS X Server from Apple before"
@@ -52,7 +52,7 @@ case $version in
   ;;
 [6]*)
   php="php-7.1.14.tar.gz"
-  php_dir="php-7.0.7"
+  php_dir="php-7.1.14"
   conf="./configure --with-apxs2=/usr/sbin/apxs --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --sysconfdir=/private/etc --enable-cli --with-config-file-path=/etc --with-config-file-scan-dir=/Library/Server/Web/Config/php --with-libxml-dir=/usr --with-openssl=/usr --with-kerberos=/usr --with-zlib=/usr --enable-bcmath --with-bz2=/usr --enable-calendar --disable-cgi --with-curl=/usr --enable-dba --with-ndbm=/usr --enable-exif --enable-fpm --enable-ftp --with-icu-dir=/usr --with-ldap=/usr --with-ldap-sasl=/usr --with-libedit=/usr --enable-mbstring --enable-mbregex --with-mysqli=mysqlnd --without-pear --with-pear=no --with-pdo-mysql=mysqlnd --with-mysql-sock=/tmp/mysql.sock --with-readline=/usr --enable-shmop --with-snmp=/usr --enable-soap --enable-sockets --enable-sysvmsg --enable-sysvsem --enable-sysvshm --with-tidy --enable-wddx --with-xmlrpc --with-iconv-dir=/usr --with-xsl=/usr --enable-zip"
   ;;
 *)
@@ -79,6 +79,10 @@ tar -xzf libmcrypt-2.5.8.tar.gz
 tar -xzf libpng-1.6.16.tar.gz
 tar -xzf bison-2.7.tar.gz
 tar -zxf re2c-0.16.tar.gz
+tar -zxf imagick-3.4.3.tgz
+tar -zxf ImageMagick.tar.gz
+tar -zxf pkg-config-0.28.tar.gz
+
 if [ $yasm == 'y' ]; then
   tar -xzf icu4c-4-8-1.tgz 
   tar -xzf yasm-1.3.0.tar.gz
@@ -129,6 +133,20 @@ cd ../autoconf-2.69
 make clean > ../../logs/autoconf-clean.txt 2>&1
 make > ../../logs/autoconf-make.txt 2>&1
 make install > ../../logs/autoconf-install.txt 2>&1
+
+echo "Installing png-config 0.28"
+cd ../pkg-config-0.28
+./configure --with-internal-glib > ../../logs/pkg-config-configure.txt 2>&1
+make clean > ../../logs/pkg-config-clean.txt 2>&1
+make > ../../logs/pkg-config-make.txt 2>&1
+make install > ../../logs/pkg-config-install.txt 2>&1
+
+echo "Installing ImageMagick"
+cd ../ImageMagick-7.0.7-22
+./configure > ../../logs/imagemagick-configure.txt 2>&1
+make clean > ../../logs/imagemagick-clean.txt 2>&1
+make > ../../logs/imagemagick-make.txt 2>&1
+make install > ../../logs/imagemagick-install.txt 2>&1
 
 if [ $yasm == 'y' ]; then
   echo "Installing icu4c 4-8-1"
@@ -205,6 +223,15 @@ make clean > ../../../../logs/php-gd-make-clean.txt 2>&1
 make > ../../../../logs/php-gd-make.txt 2>&1
 make install > ../../../../logs/php-gd-make-install.txt 2>&1
 
+echo "Imagick PHP Extension"
+cd ../imagick-3.4.3/imagick-3.4.3
+phpize > ../../../../../logs/imagick-phpize.txt 2>&1
+./configure  > ../../../../../logs/imagick-configure.txt 2>&1
+make clean > ../../../../../logs/imagick-make-clean.txt 2>&1
+make > ../../../../../logs/imagick-make.txt 2>&1
+make install > ../../../../../logs/imagick-make-install.txt 2>&1
+cd ../
+
 echo "mcrypt"
 cd ../mcrypt
 phpize > ../../../../logs/php-mcrypt-phpize.txt 2>&1
@@ -236,6 +263,7 @@ cd ../../../../
 echo ""
 echo "Configuring web server exitensions."
 echo "" > /Library/Server/Web/Config/php/extensions.ini
+echo "extension=imagick.so" >> /Library/Server/Web/Config/php/extensions.ini
 echo "extension=gd.so" >> /Library/Server/Web/Config/php/extensions.ini
 echo "extension=mcrypt.so" >> /Library/Server/Web/Config/php/extensions.ini
 echo "extension=pcntl.so" >> /Library/Server/Web/Config/php/extensions.ini
